@@ -1,18 +1,19 @@
 package unidad4;
 
 import java.time.LocalDate;
-public class animal {
-	
+
+public class Animal {
 	//varibles primitivas o referencias a otros objetos
 	//es recomendable poner private los atributos, objetos inmutables
 	
 	private String nombre;
+	
 	private LocalDate fecha;
 	
 	//constructor, no define el tipo de datos de retorno y puede tener varios parametros formales, mismo nombre que la clase
 	//define el estado inicial de un objeto cuando este se crea
 		
-	public animal(String nombre, LocalDate fecha) {
+	public Animal(String nombre, LocalDate fecha) {
 		
 		this.nombre = nombre;
 		this.fecha = fecha;
@@ -24,7 +25,7 @@ public class animal {
 	//miembro de una clase es un atributo o un metodo, se puede acceder desde el interior de la clase o desde el exterior de la clase
 	//se puede generar auto
 	
-	public animal(String nombre) {
+	public Animal(String nombre) {
 		
 		this.nombre = nombre;
 		fecha = LocalDate.now();
@@ -60,5 +61,4 @@ public class animal {
 		return "animal [nombre=" + nombre + ", fecha=" + fecha + "]";
 	}
 
-	
 }
