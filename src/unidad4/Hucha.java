@@ -22,7 +22,7 @@ public class Hucha {
 	//el estado 
 	private boolean abierta;
 	//contraseña
-	private String password;
+	private String password = "password";
 	
 	//tenenmos que construir 3, vacia, con una cantidad especificada de billetes y monedas, o un total de dinero que se desglosa en el minimo 
 	//numero de billetes y monedas
@@ -89,21 +89,28 @@ public class Hucha {
 	
 	//para hacerlo bien no retoramos desglose sino un tipo y no retornamos todo el array []
 	//el metodo nos devuelve l numero de billetes de un tipo dado
-	public int getDesglose(int tipo) {
+	//¿?¿?¿ Porque excepcion y no control 
+	//checked exception
+	public int getDesglose(int tipo) throws Exception {
 		//debemos controlar las opciones que pueden entrar para que no de los errores if para impiderli NO excepcion¿?
+		if (abierta)
 		return desglose[tipo];
-			
+		else
+			throw new Exception("La hucha esta vacia");
 	}
 	
 	
 	//este servira para sacar dinero, tantos billetes de tal cantidad
-	public int retirar(int cantidad, int tipo) {
-		if (desglose[tipo] < cantidad) {
-			cantidad = desglose[tipo];
+	public int retirar(int cantidad, int tipo) throws Exception{
+		if (abierta) {
+			if (desglose[tipo] < cantidad) {
+				cantidad = desglose[tipo];
+			}
+			desglose[tipo] -= cantidad;
+			return cantidad;
 		}
-		desglose[tipo] -= cantidad;
-		
-		return cantidad;
+			else
+				throw new Exception();
 	}
 	
 	
@@ -116,28 +123,57 @@ public class Hucha {
 		//lo doy devuelvo
 		//resto lo sacado
 		//modificar esto para uqe haga lo que pedimos
-		//Devolvera la cantidad pedida excepto si no tiene dinero para ello, si se piden 75 y hay 74 devuelve 70
-		//no quedara en negativo, ¿Si se piden 75 y hay 74, devolver 74? 
+		//Devolvera la cantidad pedida excepto si no tiene dinero, si se piden 75 y hay 74 devuelve 70
+		//no quedara en negativo, Si se piden 75 y hay 74, devolver 74 
 		int devuelve = 0;
-		for (int i = 0; i< tipos.length && cantidad > 0; i++) {
-			if (cantidad >= tipos[i] && desglose[i] > 0) { // && cantidad / tipos[i] > 0 
-				
-				devuelve += (cantidad /tipos[i]) * tipos[i];
-				//System.out.println(devuelve);
-				desglose[i] -= cantidad / tipos[i];
-			}
+		int total = 0;
+		for (int j=0; j<desglose.length;j++) {
+			total += desglose[j] *tipos[j]; 
+		}
+		
+		if(cantidad > total) {
 			
-			cantidad %= tipos[i];
+			return total;	
 			
 		}
+		
+		for (int i = 0; i< tipos.length-1 && cantidad > 0; i++) {
+		
+			if (cantidad >= tipos[i] && desglose[i] > 0) { 
+				
+				devuelve += (cantidad /tipos[i]) * tipos[i];
+				desglose[i] -= cantidad / tipos[i];
+			}
+				
+			cantidad %= tipos[i];
+		
+		}
+		
 		return devuelve;
 	}
 	
-	public static void main(String[] args) {
+	public void abrir(String password) throws Exception {
+		if (this.password.equals(password)) {
+			this.abierta = true;
+		}
+		else
+			throw new Exception();
+	}
+	
+	public void cerrar(String password) throws Exception {
+		if (this.password.equals(password)) {
+			this.abierta = false;
+		}
+		else 
+			throw new Exception();
+	}
+	
+	public static void main(String[] args) throws Exception{
 		//usamos el constructor Hucha(int cantidad)
 		Hucha h = new Hucha(224);
 		//si trajesemos la referencia al array posdriamos modificarlo mala practica
 		//h.getDesglose() [1] = 2;
+		h.abrir("passwor");
 		System.out.println(h);
 		//asi retornaria el valor de los billetes de 50 posicion de del array que se le pasa a desglose[tip]
 		System.out.println(h.getDesglose(0));
