@@ -30,7 +30,7 @@ public class Naipe {
 	public int getValor() {
 		return valor;
 	}
-
+//bloque estatico de inicializacion
 
 	public void setValor(int valor) {
 		this.valor = valor;
