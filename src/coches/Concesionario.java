@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Concesionario {
 	
 	ArrayList<Automovil> autos = new ArrayList<>();
-	ArrayList<Automovil> viajes = new ArrayList<>();
+	//ArrayList<Automovil> viajes = new ArrayList<>();
 	
 	public Concesionario(Automovil coche) {
 		autos.add(coche);
