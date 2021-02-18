@@ -15,8 +15,6 @@ public abstract class Electrodomestico {
 		this.peso = peso;
 	}
 
-
-
 	public Electrodomestico(double precio, ColorElectrodomestico color, ConsumoEnergetico consumo, int peso) {
 	
 		this.precio = precio;
@@ -26,30 +24,21 @@ public abstract class Electrodomestico {
 		this.precioFinal = precioTotal(consumo.getValor(), peso);
 	}
 
-
 	public double getPrecio() {
 		return precio;
 	}
-
-
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
-
-
 	public double getPrecioFinal() {
 		return precioFinal;
 	}
 
-
-
 	public void setPrecioFinal(double precioFinal) {
 		this.precioFinal = precioFinal;
 	}
-
-
 
 	public ColorElectrodomestico getColor() {
 		return color;
@@ -88,7 +77,6 @@ public abstract class Electrodomestico {
 		else if (peso > 80)
 			precioPeso = 20;
 		
-		//podria al ser 100 sumarle directamente el valor? 
 		precioFinal = (this.precio * valorConsumo) / 100 + (this.precio * precioPeso) / 100 + this.precio;
 
 		return precioFinal;
