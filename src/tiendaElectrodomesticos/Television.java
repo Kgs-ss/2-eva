@@ -5,16 +5,6 @@ public class Television extends Electrodomestico {
 	private boolean dvbt2;
 	private int pulgadas = 20;
 	
-	public Television(double precio, int peso) {
-		super(precio, peso);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Television(double precio, ColorElectrodomestico color, ConsumoEnergetico consumo, int peso) {
-		super(precio, color, consumo, peso);
-		// TODO Auto-generated constructor stub
-	}
-
 	public Television(double precio, int peso, boolean dvbt2, int pulgadas) {
 		super(precio, peso);
 		this.dvbt2 = dvbt2;

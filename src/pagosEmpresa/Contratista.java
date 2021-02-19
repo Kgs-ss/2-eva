@@ -45,9 +45,6 @@ public class Contratista extends Empleado {
 	}
 
 	@Override
-	public void pago() {}
-
-	@Override
 	public void pago(double dinero) {
 		
 		System.out.println("el contratista " + getNombre() + " ha recibido en la cuenta " + getNumCuenta() + " la cantidad de " + dinero + " €");

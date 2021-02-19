@@ -6,11 +6,6 @@ public class Asalariado extends Empleado {
 	
 	private double salario;
 	
-	public Asalariado(String nombre, String apellidos, Date fechaContratacion, String numCuenta) {
-		super(nombre, apellidos, fechaContratacion, numCuenta);
-		
-	}
-
 	public Asalariado(String nombre, String apellidos, Date fechaContratacion, String numCuenta, double salario) {
 		super(nombre, apellidos, fechaContratacion, numCuenta);
 		this.salario = salario;
@@ -30,14 +25,9 @@ public class Asalariado extends Empleado {
 	}
 
 	
-	public void pago(double dinero) {};
-	@Override
-	public void pago() {
-		
-		System.out.println("el asalariado " + getNombre() + " ha recibido en la cuenta " + getNumCuenta() + " la cantidad de " + getSalario());
-		
+	public void pago(double dinero) {
+	
+		System.out.println("el asalariado " + getNombre() + " ha recibido en la cuenta " + getNumCuenta() + " la cantidad de " + dinero + " €");
 	}
-	
-	
-	
+		
 }

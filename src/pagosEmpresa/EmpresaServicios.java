@@ -5,10 +5,6 @@ public class EmpresaServicios extends ServiciosExternos implements Transferencia
 	private String servicio;
 	private String numCuentaServicio;
 	
-	public EmpresaServicios(String nombre) {
-		super(nombre);
-	}
-
 	public EmpresaServicios(String nombre, String servicio, String numCuentaServicio) {
 		super(nombre);
 		this.servicio = servicio;
@@ -34,11 +30,6 @@ public class EmpresaServicios extends ServiciosExternos implements Transferencia
 	
 	}
 
-	@Override
-	public void pago() {
-		// TODO Auto-generated method stub
-	
-	}
 
 	@Override
 	public void pago(double dinero) {

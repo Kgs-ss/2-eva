@@ -9,8 +9,8 @@ public class ventas {
 		ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>();
  		
 		Television hisense = new Television(300, ColorElectrodomestico.NEGRO, ConsumoEnergetico.A, 10, true, 50);
-		Frigorifico frigo = new Frigorifico(200, ColorElectrodomestico.AZUL, ConsumoEnergetico.B, 90);
-		Lavadora korn = new Lavadora(300, ColorElectrodomestico.BLANCO, ConsumoEnergetico.C, 51, 9);
+		Frigorifico frigo = new Frigorifico(200, ColorElectrodomestico.AZUL, ConsumoEnergetico.B, 90, true);
+		Lavadora korn = new Lavadora(300, ColorElectrodomestico.BLANCO, ConsumoEnergetico.C, 51, 13);
 	
 		electrodomesticos.add(hisense);
 		electrodomesticos.add(frigo);

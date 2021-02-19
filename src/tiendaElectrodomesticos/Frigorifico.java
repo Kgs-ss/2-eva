@@ -4,14 +4,6 @@ public class Frigorifico extends Electrodomestico {
 
 	private boolean noFrost;
 	
-	public Frigorifico(double precio, int peso) {
-		super(precio, peso);
-	}
-
-	public Frigorifico(double precio, ColorElectrodomestico color, ConsumoEnergetico consumo, int peso) {
-		super(precio, color, consumo, peso);
-	}
-
 	public Frigorifico(double precio, int peso, boolean noFrost) {
 		super(precio, peso);
 		this.noFrost = noFrost;

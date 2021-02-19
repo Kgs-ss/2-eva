@@ -8,9 +8,8 @@ public abstract class Electrodomestico {
 	private int peso = 5;
 	private double precioFinal;
 	
-	
 	public Electrodomestico(double precio, int peso) {
-
+		
 		this.precio = precio;
 		this.peso = peso;
 	}
